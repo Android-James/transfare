@@ -4,7 +4,7 @@
 // import statement  
 import java.util.*;
 
-// Main class DijkstraExample1  
+// Main class Dijkstra
 public class transfare {
 
     // Member variables of the class
@@ -92,9 +92,15 @@ public class transfare {
     // Main method
     public static void main(String argvs[]) {
 
-        int totalNodes = 17;
-        int s = 0;
+        Scanner input = new Scanner(System.in);
 
+        int totalNodes = 17;
+        System.out.println("Enter starting node:");
+        int s = input.nextInt();
+        System.out.println("Enter end node:");
+        int e = input.nextInt();
+
+        int destination = 0;
         // representation of the connected edges
         // using the adjacency list
         // by declaration of the List class object
@@ -167,9 +173,19 @@ public class transfare {
         // from the source node
         System.out.println("The shortest path from the node :");
 
+        // for (int j = 0; j < obj.fare.length; j++) {
+        // System.out.println(s + " to " + j + " is " + obj.fare[j]);
+        // }
+
         for (int j = 0; j < obj.fare.length; j++) {
             System.out.println(s + " to " + j + " is " + obj.fare[j]);
+            // add result in destination list
+            if (j == e) {
+                destination = obj.fare[j];
+                System.out.println("ETO NA YUNG RESULT: " + destination);
+            }
         }
+
     }
 }
 
