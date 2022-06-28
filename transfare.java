@@ -100,7 +100,7 @@ public class transfare {
         System.out.println("Enter end node:");
         int e = input.nextInt();
 
-        int destination = 0;
+        int totalFare = 0;
         // representation of the connected edges
         // using the adjacency list
         // by declaration of the List class object
@@ -171,20 +171,23 @@ public class transfare {
 
         // Printing the shortest path to all the nodes
         // from the source node
-        System.out.println("The shortest path from the node :");
+        // System.out.println("The shortest path from the node :");
 
         // for (int j = 0; j < obj.fare.length; j++) {
         // System.out.println(s + " to " + j + " is " + obj.fare[j]);
         // }
 
         for (int j = 0; j < obj.fare.length; j++) {
-            System.out.println(s + " to " + j + " is " + obj.fare[j]);
-            // add result in destination list
+            // System.out.println(s + " to " + j + " is " + obj.fare[j]);
+            // add result in variable destination
             if (j == e) {
-                destination = obj.fare[j];
-                System.out.println("ETO NA YUNG RESULT: " + destination);
+                totalFare = obj.fare[j];
+                // System.out.println("ETO NA YUNG RESULT: " + destination);
             }
         }
+
+        System.out.println();
+        System.out.println("The total fare of the cheapest route from " + s + " to " + e + " is " + totalFare);
 
     }
 }
